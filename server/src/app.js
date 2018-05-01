@@ -1,3 +1,4 @@
+/* eslint no-template-curly-in-string: "error" */
 /* eslint space-infix-ops: "error" */
 /* eslint-env es6 */
 /* jshint esversion: 6 */
@@ -14,7 +15,13 @@ app.use(cors())
 
 app.get('/status', (req, res) => {
   res.send({
-    message: 'Hello world!'
+    message: `Server is UP: code 200!`
+  })
+})
+
+app.post('/register', (req, res) => {
+  res.send({
+    message: `Hello ${req.body.email}! Your User was registered!`
   })
 })
 
